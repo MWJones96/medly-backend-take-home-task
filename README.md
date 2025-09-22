@@ -2,7 +2,7 @@
 
 ## Context
 
-You’ll design and implement a small, production-ready part of our backend. The task focuses on data modeling, migration from various JSON sources**, API design, and DevOps planning. We’re also assessing how you use AI in your workflow — feel free to use any copilots/agents.
+You’ll design and implement a small, production-ready part of our backend. The task focuses on data modeling, migration from various JSON sources, API design, and DevOps planning. We’re also assessing how you use AI in your workflow — feel free to use any copilots/agents.
 
 **Time Allocation:** 8–12 hours
 
