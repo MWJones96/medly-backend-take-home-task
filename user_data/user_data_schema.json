@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "type": "string"
+    },
+    "questionID": {
+      "type": "string"
+    },
+    "canvas": {
+      "type": "object",
+      "properties": {
+        "maths": {
+          "type": "array"
+        },
+        "paths": {
+          "type": "array"
+        },
+        "textboxes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "isMath": {
+                "type": "boolean"
+              },
+              "color": {
+                "type": "string"
+              },
+              "fontSize": {
+                "type": "integer"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "color",
+              "fontSize",
+              "isMath",
+              "text",
+              "x",
+              "y"
+            ]
+          }
+        }
+      },
+      "required": [
+        "maths",
+        "paths",
+        "textboxes"
+      ]
+    },
+    "isMarked": {
+      "type": "boolean"
+    },
+    "userMark": {
+      "type": "integer"
+    },
+    "annotatedAnswer": {
+      "type": "string"
+    },
+    "userAnswer": {
+      "type": "string"
+    },
+    "markingTable": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "canvas",
+    "createdAt",
+    "isMarked",
+    "questionID"
+  ]
+}

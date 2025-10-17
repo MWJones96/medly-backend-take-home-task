@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "board_title": {
+        "type": "string"
+      },
+      "qualification": {
+        "type": "string"
+      },
+      "subject_title": {
+        "type": "string"
+      },
+      "subject_id": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "series": {
+        "type": "string"
+      },
+      "papers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "paper_id": {
+              "type": "string"
+            },
+            "tier": {
+              "type": "string"
+            },
+            "paper": {
+              "type": "string"
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "question_number": {
+                    "type": "integer"
+                  },
+                  "question_stem": {
+                    "type": "string"
+                  },
+                  "question_stem_diagram": {
+                    "anyOf": [
+                      {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "required": {
+                            "type": "boolean"
+                          },
+                          "items": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "description": {
+                                  "type": "string"
+                                },
+                                "method": {
+                                  "type": "string"
+                                },
+                                "attempts": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "attempt_number": {
+                                        "type": "integer"
+                                      },
+                                      "latex_code": {
+                                        "type": "null"
+                                      },
+                                      "success": {
+                                        "type": "boolean"
+                                      },
+                                      "svg": {
+                                        "type": "null"
+                                      },
+                                      "png_path": {
+                                        "type": "string"
+                                      },
+                                      "error_message": {
+                                        "type": "null"
+                                      },
+                                      "retry_count": {
+                                        "type": "integer"
+                                      },
+                                      "missing_content": {
+                                        "type": "array"
+                                      },
+                                      "llm_rank": {
+                                        "type": "integer"
+                                      },
+                                      "llm_feedback": {
+                                        "type": "null"
+                                      },
+                                      "requires_intervention": {
+                                        "type": "null"
+                                      }
+                                    },
+                                    "required": [
+                                      "attempt_number",
+                                      "error_message",
+                                      "latex_code",
+                                      "llm_feedback",
+                                      "llm_rank",
+                                      "missing_content",
+                                      "png_path",
+                                      "requires_intervention",
+                                      "retry_count",
+                                      "success",
+                                      "svg"
+                                    ]
+                                  }
+                                },
+                                "final": {
+                                  "type": "object",
+                                  "properties": {
+                                    "png_path": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "png_path"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "attempts",
+                                "description",
+                                "final",
+                                "method"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "required"
+                        ]
+                      }
+                    ]
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "question_part": {
+                          "type": "integer"
+                        },
+                        "question_type": {
+                          "type": "string"
+                        },
+                        "question_text": {
+                          "type": "string"
+                        },
+                        "markmax": {
+                          "type": "integer"
+                        },
+                        "markscheme": {
+                          "type": "string"
+                        },
+                        "difficulty": {
+                          "type": "integer"
+                        },
+                        "lessonIDs": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "questionID": {
+                          "type": "string"
+                        },
+                        "options": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "correct_answer_index": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "lessonIDs",
+                        "markmax",
+                        "markscheme",
+                        "questionID",
+                        "question_part",
+                        "question_text",
+                        "question_type"
+                      ]
+                    }
+                  },
+                  "validation_comment": {
+                    "type": "string"
+                  },
+                  "validation_reason": {
+                    "type": "string"
+                  },
+                  "question_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "items",
+                  "question_id",
+                  "question_number",
+                  "question_stem",
+                  "question_stem_diagram",
+                  "validation_comment",
+                  "validation_reason"
+                ]
+              }
+            }
+          },
+          "required": [
+            "paper",
+            "paper_id",
+            "questions",
+            "tier"
+          ]
+        }
+      }
+    },
+    "required": [
+      "board_title",
+      "papers",
+      "qualification",
+      "series",
+      "subject_id",
+      "subject_title",
+      "type"
+    ]
+  }
+}

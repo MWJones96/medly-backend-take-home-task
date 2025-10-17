@@ -1,0 +1,382 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "exam_board": {
+        "type": "string"
+      },
+      "qualification": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "unit_index": {
+        "type": "integer"
+      },
+      "unit_title": {
+        "type": "string"
+      },
+      "topic_index": {
+        "type": "integer"
+      },
+      "topic_title": {
+        "type": "string"
+      },
+      "lesson_index": {
+        "type": "integer"
+      },
+      "lessonID": {
+        "type": "string"
+      },
+      "lesson_title": {
+        "type": "string"
+      },
+      "chunks_used": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "chunk_index": {
+              "type": "integer"
+            },
+            "chunk_title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "chunk_index",
+            "chunk_title"
+          ]
+        }
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "question_number": {
+              "type": "integer"
+            },
+            "question_stem": {
+              "type": "string"
+            },
+            "question_stem_diagram": {
+              "anyOf": [
+                {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "method": {
+                            "type": "string"
+                          },
+                          "attempts": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "attempt_number": {
+                                  "type": "integer"
+                                },
+                                "latex_code": {
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ]
+                                },
+                                "success": {
+                                  "type": "boolean"
+                                },
+                                "svg": {
+                                  "type": "null"
+                                },
+                                "png_path": {
+                                  "type": "string"
+                                },
+                                "error_message": {
+                                  "type": "null"
+                                },
+                                "retry_count": {
+                                  "type": "integer"
+                                },
+                                "missing_content": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "llm_rank": {
+                                  "type": "integer"
+                                },
+                                "llm_feedback": {
+                                  "type": "string"
+                                },
+                                "requires_intervention": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "latex_code",
+                                "llm_rank",
+                                "png_path",
+                                "success",
+                                "svg"
+                              ]
+                            }
+                          },
+                          "final": {
+                            "type": "object",
+                            "properties": {
+                              "png_path": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "attempts",
+                          "description",
+                          "final",
+                          "method"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "items",
+                    "required"
+                  ]
+                }
+              ]
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "question_part": {
+                    "type": "integer"
+                  },
+                  "question_type": {
+                    "type": "string"
+                  },
+                  "question_text": {
+                    "type": "string"
+                  },
+                  "markmax": {
+                    "type": "integer"
+                  },
+                  "markscheme": {
+                    "type": "string"
+                  },
+                  "difficulty": {
+                    "type": "integer"
+                  },
+                  "specification_point": {
+                    "type": "string"
+                  },
+                  "questionID": {
+                    "type": "string"
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "correct_answer_index": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "integer"
+                        }
+                      }
+                    ]
+                  },
+                  "question_diagram": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "required": {
+                            "type": "boolean"
+                          },
+                          "items": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "description": {
+                                  "type": "string"
+                                },
+                                "method": {
+                                  "type": "string"
+                                },
+                                "attempts": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "attempt_number": {
+                                        "type": "integer"
+                                      },
+                                      "latex_code": {
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      "success": {
+                                        "type": "boolean"
+                                      },
+                                      "svg": {
+                                        "type": "null"
+                                      },
+                                      "png_path": {
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      "error_message": {
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      "retry_count": {
+                                        "type": "integer"
+                                      },
+                                      "llm_rank": {
+                                        "type": [
+                                          "integer",
+                                          "null"
+                                        ]
+                                      },
+                                      "llm_feedback": {
+                                        "type": "string"
+                                      },
+                                      "requires_intervention": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
+                                      },
+                                      "cycles_attempted": {
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "required": [
+                                      "latex_code",
+                                      "llm_rank",
+                                      "png_path",
+                                      "success",
+                                      "svg"
+                                    ]
+                                  }
+                                },
+                                "final": {
+                                  "type": "object",
+                                  "properties": {
+                                    "png_path": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "required": [
+                                "attempts",
+                                "description",
+                                "final",
+                                "method"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "required"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "difficulty",
+                  "markmax",
+                  "markscheme",
+                  "questionID",
+                  "question_part",
+                  "question_text",
+                  "question_type",
+                  "specification_point"
+                ]
+              }
+            },
+            "validation_comment": {
+              "type": "string"
+            },
+            "validation_reason": {
+              "type": "string"
+            },
+            "question_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "items",
+            "question_id",
+            "question_number",
+            "question_stem",
+            "question_stem_diagram",
+            "validation_comment",
+            "validation_reason"
+          ]
+        }
+      },
+      "original_lessonID": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "chunks_used",
+      "exam_board",
+      "items",
+      "lessonID",
+      "lesson_index",
+      "lesson_title",
+      "original_lessonID",
+      "qualification",
+      "subject",
+      "topic_index",
+      "topic_title",
+      "unit_index",
+      "unit_title"
+    ]
+  }
+}

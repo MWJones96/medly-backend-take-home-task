@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "unitIndex": {
+        "type": "integer"
+      },
+      "unitTitle": {
+        "type": "string"
+      },
+      "topics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "topicIndex": {
+              "type": "integer"
+            },
+            "topicTitle": {
+              "type": "string"
+            },
+            "lessons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lessonIndex": {
+                    "type": "integer"
+                  },
+                  "lessonID": {
+                    "type": "string"
+                  },
+                  "lessonTitle": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lessonID",
+                  "lessonIndex",
+                  "lessonTitle"
+                ]
+              }
+            }
+          },
+          "required": [
+            "lessons",
+            "topicIndex",
+            "topicTitle"
+          ]
+        }
+      }
+    },
+    "required": [
+      "topics",
+      "unitIndex",
+      "unitTitle"
+    ]
+  }
+}
