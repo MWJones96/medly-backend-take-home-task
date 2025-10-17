@@ -1,0 +1,36 @@
+# Python / Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+
+# Virtual environment
+venv/
+
+# Logs
+*.log
+*.pot
+*.py[cod]
+*.swp
+*.swo
+*.DS_Store
+
+# Django stuff
+*.cover
+*.coverage
+htmlcov/
+*.mo
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.env
+*.venv
+/staticfiles/
+/media/
+
+# IDEs
+.vscode/
+.idea/
