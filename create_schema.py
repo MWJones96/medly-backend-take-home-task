@@ -21,7 +21,10 @@ def main():
 
     with open(input, "r") as f:
         data = json.load(f)
-        for v in data["targets"].values():
+        
+        for k, v in data["targets"].items():
+            user_id = k.split('/')[1]
+            v["userID"] = user_id
             builder.add_object(v)
     
     with open(output, "w") as f:
